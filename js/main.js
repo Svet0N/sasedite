@@ -124,8 +124,8 @@ if (reservationForm) {
 			guests: guestsInput?.value || "",
 		};
 
-		const message = `Резервация:%0AИме: ${payload.name}%0AТелефон: ${payload.phone}%0AДата: ${payload.date}%0AЧас: ${payload.time}%0AГости: ${payload.guests}`;
-		const messengerUrl = `${messengerBase}?text=${encodeURIComponent(message)}`;
+		const messageText = `Здравейте! Искам да направя резервация.\nИме: ${payload.name}\nТелефон: ${payload.phone}\nДата: ${payload.date}\nЧас: ${payload.time}\nГости: ${payload.guests}`;
+		const messengerUrl = `${messengerBase}?text=${encodeURIComponent(messageText)}`;
 
 		if (appScriptUrl === "YOUR_GOOGLE_APPS_SCRIPT_URL") {
 			if (reservationStatus) reservationStatus.hidden = true;
