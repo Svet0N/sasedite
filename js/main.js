@@ -81,7 +81,7 @@ if (reservationForm) {
 	const guestsInput = reservationForm.querySelector("#guests");
 	const today = new Date();
 	const todayValue = today.toISOString().split("T")[0];
-	const appScriptUrl = "https://script.google.com/macros/s/AKfycbzp1znP2OnxGKYeWCQ3zFTaz4hcuNcSSMSJymvUwSHhde5myiGdCY1uSyj973ok5CQLwA/exec";
+	const appScriptUrl = "https://script.google.com/macros/s/AKfycbwJq4rVBWDmKVEQHqmGUEwX3qHPgA0V5rE6AFnaEsSI2sutYc1k4kmax7xH3JCoyVyFPg/exec";
 	const messengerBase = "https://m.me/sasedite";
 
 	if (dateInput) {
