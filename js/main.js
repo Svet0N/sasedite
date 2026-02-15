@@ -81,7 +81,7 @@ if (reservationForm) {
 	const guestsInput = reservationForm.querySelector("#guests");
 	const today = new Date();
 	const todayValue = today.toISOString().split("T")[0];
-	const appScriptUrl = "https://script.google.com/macros/s/AKfycbzQwItfnbtI-_LqR0xK3UbbYHL3BMDSX2bxt1fSQKYVI9bfUIHX5wUbvUd3xz0OIeZieg/exec";
+	const appScriptUrl = "https://script.google.com/macros/s/AKfycbzp1znP2OnxGKYeWCQ3zFTaz4hcuNcSSMSJymvUwSHhde5myiGdCY1uSyj973ok5CQLwA/exec";
 	const messengerBase = "https://m.me/sasedite";
 
 	if (dateInput) {
@@ -133,17 +133,17 @@ if (reservationForm) {
 			return;
 		}
 
+		const formData = new FormData();
+		Object.entries(payload).forEach(([key, value]) => {
+			formData.append(key, value);
+		});
+
 		fetch(appScriptUrl, {
 			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(payload),
+			mode: "no-cors",
+			body: formData,
 		})
-			.then((response) => {
-				if (!response.ok) {
-					throw new Error("Request failed");
-				}
+			.then(() => {
 				if (reservationStatus) reservationStatus.hidden = true;
 				if (reservationSuccess) reservationSuccess.hidden = false;
 				reservationForm.reset();
