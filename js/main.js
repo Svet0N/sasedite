@@ -144,15 +144,18 @@ if (reservationForm) {
 			body: formData,
 		})
 			.then(() => {
+				console.log("✓ Fetch успешен, показвам успешно съобщение...");
 				if (reservationStatus) reservationStatus.hidden = true;
 				if (reservationSuccess) reservationSuccess.hidden = false;
 				reservationForm.reset();
 				if (dateInput) {
 					dateInput.min = todayValue;
 				}
+				console.log("✓ Отваря Messenger...", messengerUrl);
 				window.open(messengerUrl, "_blank", "noopener");
 			})
-			.catch(() => {
+			.catch((err) => {
+				console.error("✗ Fetch грешка:", err);
 				if (reservationStatus) reservationStatus.hidden = true;
 				if (reservationError) reservationError.hidden = false;
 			});
