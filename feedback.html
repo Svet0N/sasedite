@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="bg">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Обратна връзка | Съседите</title>
+		<meta name="description" content="Обратна връзка за Съседите" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<main id="top">
+			<section>
+				<div class="container">
+					<div class="section-title">
+						<h2>Какво можем да подобрим?</h2>
+						<p>Напишете ни с няколко думи какво не ви хареса. Това ни помага да станем по-добри.</p>
+					</div>
+					<form id="feedback-form" class="story-card" novalidate>
+						<!-- TODO: EmailJS IDs will be added here when provided. -->
+						<label for="feedback">Вашето мнение</label>
+						<textarea
+							id="feedback"
+							name="feedback"
+							rows="6"
+							placeholder="Напишете какво можем да подобрим..."
+							required
+						></textarea>
+						<div class="reservation-actions" style="margin-top: 12px;">
+							<button class="btn btn-primary" type="submit">Изпрати</button>
+							<a class="btn btn-outline btn-dark" href="index.html">Назад към сайта</a>
+						</div>
+						<p id="feedback-success" class="form-success" role="status" aria-live="polite" hidden>
+							Благодарим за обратната връзка!
+						</p>
+						<p id="feedback-error" class="form-error" role="status" aria-live="polite" hidden>
+							Формата не е свързана с имейл. Изпратете ни данните от EmailJS, за да я активираме.
+						</p>
+					</form>
+				</div>
+			</section>
+		</main>
+
+		<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

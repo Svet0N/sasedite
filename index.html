@@ -90,27 +90,30 @@
 				<div class="container">
 					<div class="section-title">
 						<h2>Историята ни</h2>
-						<p>Място за хора, които обичат истинската храна, топлия разговор и усещането, че си у дома.</p>
 					</div>
-					<div class="story">
+					<div class="story story-single">
 						<div class="story-card">
-							<h3>Кухня с характер</h3>
+							<h3>Здравейте, мили съседи!</h3>
 							<p>
-								Съседите е ресторант, който живее с ритъма на квартала. Готвим всеки ден, с внимание и
-								уважение към продуктите. Менюто се променя според сезона и вдъхновението, а атмосферата
-								остава неизменно уютна.
+								Добре сте дошли на новият ни адрес в близост до Южен парк: бул. Гоце Делчев блок 102 вход А. Ще ни
+								познаете по аромата на пица, който се носи покрай блока.
 							</p>
 							<p>
-								При нас храната е повод да се съберете, да се забавите и да усетите простото удоволствие
-								от една хубава вечер.
+								Тук отново ще ви посрещнем с усмивка и ще ви нагостим с чудна пица и вкусна сезонна храна. Салона ни е
+								уютен и таен. Разполагаме с 20 седящи места, затова резервациите са препоръчителни.
 							</p>
-						</div>
-						<div class="story-image">
-							<img
-								src="gallery/468402503_18462841153067038_8367741954419674655_n.jpg"
-								alt="Интериор в Съседите"
-								loading="lazy"
-							/>
+							<p>
+								Работим всеки ден от 11:00 до 22:00. През делничните дни имаме чудесно обедно меню, а през почивните
+								дни предлагаме отново храна за душата, бургери, яйца и други вкусни брънч предложения.
+							</p>
+							<p>
+								Пиците, които предлагаме са в два стила: „романа“ и „неаполитана“. Всяка пица може да бъде поръчана с
+								безглутенов блат и веган моцарела.
+							</p>
+							<p>
+								Целодневно работим с а-ла-карт меню с салати, паста и десерти, приготвени на място. Предлагаме и
+								безалкохолно вино.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -120,47 +123,26 @@
 				<div class="container">
 					<div class="section-title">
 						<h2>Дневно меню</h2>
-						<p>Менюто се обновява ежедневно. Днешните предложения са във Facebook страницата ни.</p>
+						<p>Най-новото меню е първият пост във Facebook страницата ни.</p>
 					</div>
-					<div class="menu-grid">
-						<article class="menu-card">
-							<h3>Супа на деня</h3>
-							<p>Приготвена сутринта, според сезонните продукти.</p>
-							<span>Цена: променлива</span>
-						</article>
-						<article class="menu-card">
-							<h3>Основно на деня</h3>
-							<p>Топла домашна рецепта, която се сменя всеки ден.</p>
-							<span>Цена: променлива</span>
-						</article>
-						<article class="menu-card">
-							<h3>Вегетарианско предложение</h3>
-							<p>Леко, свежо и балансирано, с много вкус.</p>
-							<span>Цена: променлива</span>
-						</article>
-						<article class="menu-card">
-							<h3>Салата</h3>
-							<p>Комбинация от свежи зеленчуци и сезонни акценти.</p>
-							<span>Цена: променлива</span>
-						</article>
-						<article class="menu-card">
-							<h3>Домашен десерт</h3>
-							<p>Нещо сладко, което те кара да останеш още малко.</p>
-							<span>Цена: променлива</span>
-						</article>
-						<article class="menu-card">
-							<h3>Специалитет</h3>
-							<p>Вдъхновено от сезона, с характерен вкус.</p>
-							<span>Цена: променлива</span>
-						</article>
-					</div>
-					<p class="menu-note">
-						Вижте днешното меню във Facebook или се обадете, за да ви разкажем какво ухае в кухнята.
-					</p>
-					<div class="cta-group" style="margin-top: 20px;">
-						<a class="btn btn-primary" href="https://www.facebook.com/sasedite" target="_blank" rel="noreferrer">
-							Дневно меню във Facebook
-						</a>
+					<div class="embed-card">
+						<div class="embed-responsive" aria-label="Дневно меню от Facebook">
+							<iframe
+								src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsasedite&tabs=timeline&width=340&height=720&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false"
+								width="100%"
+								height="720"
+								style="border:0; overflow:hidden"
+								scrolling="no"
+								frameborder="0"
+								allowfullscreen="true"
+								allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+								title="Facebook меню"
+							></iframe>
+						</div>
+						<p class="menu-note">
+							Ако менюто не се зарежда, отворете го директно във
+							<a class="contact-link" href="https://www.facebook.com/sasedite" target="_blank" rel="noreferrer">Facebook</a>.
+						</p>
 					</div>
 				</div>
 			</section>
@@ -219,7 +201,7 @@
 						<p>Запазете си място. Обичаме да ви посрещаме спокойно и подготвени.</p>
 					</div>
 					<div class="reservation">
-						<form>
+						<form id="reservation-form" novalidate>
 							<div>
 								<label for="name">Име</label>
 								<input id="name" name="name" type="text" placeholder="Вашето име" required />
@@ -229,24 +211,30 @@
 								<input id="phone" name="phone" type="tel" placeholder="08xx xxx xxx" required />
 							</div>
 							<div>
-								<label for="datetime">Дата и час</label>
-								<input id="datetime" name="datetime" type="datetime-local" required />
+								<label for="date">Дата</label>
+								<input id="date" name="date" type="date" required />
+							</div>
+							<div>
+								<label for="time">Час</label>
+								<input id="time" name="time" type="time" min="11:00" max="22:00" step="900" required />
 							</div>
 							<div>
 								<label for="guests">Гости</label>
-								<select id="guests" name="guests" required>
-									<option value="1">1 човек</option>
-									<option value="2">2 човека</option>
-									<option value="3">3 човека</option>
-									<option value="4">4 човека</option>
-									<option value="5">5 човека</option>
-									<option value="6">6+ човека</option>
-								</select>
+								<input id="guests" name="guests" type="number" min="1" max="20" value="2" required />
 							</div>
 							<div class="reservation-actions">
-								<button class="btn btn-primary" type="submit">Изпрати заявка</button>
+								<button class="btn btn-primary" type="submit">Резервирай</button>
 								<a class="btn btn-outline" href="tel:0889992200">Обади се</a>
 							</div>
+							<p id="reservation-status" class="form-status" role="status" aria-live="polite" hidden>
+								Изпращаме резервацията...
+							</p>
+							<p id="reservation-success" class="form-success" role="status" aria-live="polite" hidden>
+								Благодарим! Получихме заявката ви и ще се свържем при нужда.
+							</p>
+							<p id="reservation-error" class="form-error" role="status" aria-live="polite" hidden>
+								Възникна проблем при изпращането. Моля, опитайте отново.
+							</p>
 						</form>
 						<div class="story-card">
 							<h3>Бърза връзка</h3>
@@ -258,34 +246,6 @@
 								</a>
 							</div>
 						</div>
-					</div>
-				</div>
-			</section>
-
-			<section id="reviews">
-				<div class="container">
-					<div class="section-title">
-						<h2>Отзиви</h2>
-						<p>Оставете ни вашата история или прочетете впечатленията във Facebook.</p>
-					</div>
-					<div class="reviews">
-						<div class="review-card">
-								„Истински вкус и усещане за уют. Идваме отново и отново.“
-								<span>Гост на Съседите</span>
-						</div>
-						<div class="review-card">
-							„Домашна храна, която те кара да забавиш темпото и да се усмихнеш.“
-							<span>Квартален приятел</span>
-						</div>
-						<div class="review-card">
-								„Сърдечно обслужване и ястия, които се помнят.“
-								<span>Редовен гост</span>
-						</div>
-					</div>
-					<div class="cta-group" style="margin-top: 24px;">
-						<a class="btn btn-primary" href="https://www.facebook.com/sasedite/reviews" target="_blank" rel="noreferrer">
-							Виж отзивите във Facebook
-						</a>
 					</div>
 				</div>
 			</section>
@@ -329,19 +289,19 @@
 						<div class="contact-card">
 							<h3>Работно време</h3>
 							<div class="hours">
-								<div>Понеделник: 10:30 – 19:30</div>
-								<div>Вторник: 10:30 – 19:30</div>
-								<div>Сряда: 10:30 – 19:30</div>
-								<div>Четвъртък: 10:30 – 19:30</div>
-								<div>Петък: 10:30 – 19:30</div>
-								<div>Събота: Затворено</div>
-								<div>Неделя: Затворено</div>
+								<div>Понеделник: 11:00 – 22:00</div>
+								<div>Вторник: 11:00 – 22:00</div>
+								<div>Сряда: 11:00 – 22:00</div>
+								<div>Четвъртък: 11:00 – 22:00</div>
+								<div>Петък: 11:00 – 22:00</div>
+								<div>Събота: 11:00 – 22:00</div>
+								<div>Неделя: 11:00 – 22:00</div>
 							</div>
 						</div>
 						<div class="contact-card" style="padding: 0; overflow: hidden;">
 							<iframe
 								title="Карта към Съседите"
-								src="https://www.google.com/maps?q=%D0%91%D1%83%D0%BB%D0%B5%D0%B2%D0%B0%D1%80%D0%B4%20%D0%93%D0%BE%D1%86%D0%B5%20%D0%94%D0%B5%D0%BB%D1%87%D0%B5%D0%B2%20102%2C%20%D0%A1%D0%BE%D1%84%D0%B8%D1%8F&output=embed"
+								src="https://www.google.com/maps?q=%D0%B1%D1%83%D0%BB.%20%D0%93%D0%BE%D1%86%D0%B5%20%D0%94%D0%B5%D0%BB%D1%87%D0%B5%D0%B2%20102%20%D0%B2%D1%85%D0%BE%D0%B4%20%D0%90%2C%20%D0%A1%D0%BE%D1%84%D0%B8%D1%8F&output=embed"
 								width="100%"
 								height="320"
 								style="border:0;"
@@ -352,7 +312,7 @@
 							<div class="map-actions">
 								<a
 									class="btn btn-primary"
-									href="https://www.google.com/maps/dir/?api=1&destination=%D0%91%D1%83%D0%BB%D0%B5%D0%B2%D0%B0%D1%80%D0%B4%20%D0%93%D0%BE%D1%86%D0%B5%20%D0%94%D0%B5%D0%BB%D1%87%D0%B5%D0%B2%20102%2C%20%D0%A1%D0%BE%D1%84%D0%B8%D1%8F"
+									href="https://www.google.com/maps/dir/?api=1&destination=%D0%B1%D1%83%D0%BB.%20%D0%93%D0%BE%D1%86%D0%B5%20%D0%94%D0%B5%D0%BB%D1%87%D0%B5%D0%B2%20102%20%D0%B2%D1%85%D0%BE%D0%B4%20%D0%90%2C%20%D0%A1%D0%BE%D1%84%D0%B8%D1%8F"
 									target="_blank"
 									rel="noreferrer"
 								>
@@ -368,6 +328,48 @@
 				<div class="container">
 					<div class="map-back">
 						<a class="btn btn-outline btn-dark" href="#top">Обратно в началото</a>
+					</div>
+				</div>
+			</section>
+
+			<section id="reviews">
+				<div class="container">
+					<div class="section-title">
+						<h2>Отзиви</h2>
+						<p>Оценете ни за минута. Всяко мнение е важно.</p>
+					</div>
+					<div class="reviews-layout">
+						<div class="review-card reviews-rate">
+							<h3>Как беше при нас?</h3>
+							<p>Изберете оценка. При 4 или 5 звезди ще ви заведем към страницата ни с отзиви.</p>
+							<div
+								class="rating-stars"
+								data-high-url="https://www.facebook.com/sasedite/reviews"
+								data-low-url="feedback.html"
+							>
+								<button class="rating-button" type="button" data-rating="1" aria-label="1 звезда">★</button>
+								<button class="rating-button" type="button" data-rating="2" aria-label="2 звезди">★</button>
+								<button class="rating-button" type="button" data-rating="3" aria-label="3 звезди">★</button>
+								<button class="rating-button" type="button" data-rating="4" aria-label="4 звезди">★</button>
+								<button class="rating-button" type="button" data-rating="5" aria-label="5 звезди">★</button>
+							</div>
+							<p class="rating-note">Благодарим ви, че отделихте време.</p>
+						</div>
+						<div class="reviews-embed">
+							<div class="embed-responsive" aria-label="Facebook отзиви">
+								<iframe
+									src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsasedite&tabs=reviews&width=500&height=720&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true"
+									width="100%"
+									height="720"
+									style="border:0; overflow:hidden"
+									scrolling="no"
+									frameborder="0"
+									allowfullscreen="true"
+									allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+									title="Facebook Reviews"
+								></iframe>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
