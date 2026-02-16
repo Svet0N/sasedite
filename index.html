@@ -25,6 +25,7 @@
 		<link rel="stylesheet" href="css/styles.css" />
 	</head>
 	<body>
+		<!-- Sticky site header with logo + navigation -->
 		<header class="navbar" id="navbar">
 			<div class="container nav-inner">
 				<a class="logo" href="#top" aria-label="Съседите начало">
@@ -40,8 +41,8 @@
 					<a href="#menu">Меню</a>
 					<a href="#gallery">Галерия</a>
 					<a href="#reservation">Резервация</a>
-					<a href="#reviews">Отзиви</a>
 					<a href="#contact">Контакт</a>
+					<a href="#reviews">Отзиви</a>
 				</nav>
 				<button class="nav-toggle" type="button" aria-label="Отвори меню" aria-controls="mobile-menu" aria-expanded="false">
 					<span></span>
@@ -54,12 +55,13 @@
 				<a href="#menu">Меню</a>
 				<a href="#gallery">Галерия</a>
 				<a href="#reservation">Резервация</a>
-				<a href="#reviews">Отзиви</a>
 				<a href="#contact">Контакт</a>
+				<a href="#reviews">Отзиви</a>
 			</nav>
 		</header>
 
 		<main id="top">
+			<!-- Hero: video + main call to action -->
 			<section class="hero" aria-label="Видео представяне">
 				<video
 					autoplay
@@ -86,39 +88,33 @@
 				</div>
 			</section>
 
-			<section id="story">
-				<div class="container">
-					<div class="section-title">
-						<h2>Историята ни</h2>
+			<!-- About us: intro + three key highlights -->
+			<section id="story" class="about-section">
+				<div class="container about-inner">
+					<div class="about-header">
+						<h2 class="about-title">За нас</h2>
+						<p class="about-intro">
+							Ще ни откриете по аромата на прясно изпечена пица, който се носи из квартала.
+						</p>
 					</div>
-					<div class="story story-single">
-						<div class="story-card">
-							<h3>Здравейте, мили съседи!</h3>
-							<p>
-								Добре сте дошли на новият ни адрес в близост до Южен парк: бул. Гоце Делчев блок 102 вход А. Ще ни
-								познаете по аромата на пица, който се носи покрай блока.
-							</p>
-							<p>
-								Тук отново ще ви посрещнем с усмивка и ще ви нагостим с чудна пица и вкусна сезонна храна. Салона ни е
-								уютен и таен. Разполагаме с 20 седящи места, затова резервациите са препоръчителни.
-							</p>
-							<p>
-								Работим всеки ден от 11:00 до 22:00. През делничните дни имаме чудесно обедно меню, а през почивните
-								дни предлагаме отново храна за душата, бургери, яйца и други вкусни брънч предложения.
-							</p>
-							<p>
-								Пиците, които предлагаме са в два стила: „романа“ и „неаполитана“. Всяка пица може да бъде поръчана с
-								безглутенов блат и веган моцарела.
-							</p>
-							<p>
-								Целодневно работим с а-ла-карт меню с салати, паста и десерти, приготвени на място. Предлагаме и
-								безалкохолно вино.
-							</p>
-						</div>
+					<div class="about-grid">
+						<article class="about-card">
+							<h3>Уют и атмосфера</h3>
+							<p>Топла фурна, сезонна храна и усмивки – така посрещаме всеки гост.</p>
+						</article>
+						<article class="about-card">
+							<h3>Меню</h3>
+							<p>Пици в стил „романа“ и „неаполитана“, с безглутенов блат и веган моцарела.</p>
+						</article>
+						<article class="about-card">
+							<h3>А-ла-карт и напитки</h3>
+							<p>Салати, паста и десерти на място, плюс безалкохолно вино за специални моменти.</p>
+						</article>
 					</div>
 				</div>
 			</section>
 
+			<!-- Menu highlight with hero image + FB link -->
 			<section id="menu">
 				<div class="container">
 					<div class="section-title">
@@ -144,6 +140,7 @@
 				</div>
 			</section>
 
+			<!-- Gallery grid with lightbox -->
 			<section id="gallery">
 				<div class="container">
 					<div class="section-title">
@@ -191,6 +188,7 @@
 				</div>
 			</section>
 
+			<!-- Reservation form + quick contact -->
 			<section id="reservation">
 				<div class="container">
 					<div class="section-title">
@@ -235,11 +233,14 @@
 						</form>
 						<div class="story-card">
 							<h3>Бърза връзка</h3>
-							<p>За да сме сигурни, че ще имаме място за вас, позвънете ни или ни пишете във Facebook.</p>
+							<p>
+								За да сме сигурни, че ще имаме място за вас, позвънете ни или ни пишете във
+								<a class="contact-link" href="https://m.me/sasedite" target="_blank" rel="noreferrer">Messenger</a>.
+							</p>
 							<div class="cta-group" style="justify-content: flex-start; margin-top: 16px;">
 								<a class="btn btn-primary" href="tel:0889992200">088 999 2200</a>
-								<a class="btn btn-outline" href="https://www.facebook.com/sasedite" target="_blank" rel="noreferrer">
-									Facebook
+								<a class="btn btn-outline" href="https://m.me/sasedite" target="_blank" rel="noreferrer">
+									Messenger
 								</a>
 							</div>
 						</div>
@@ -247,6 +248,7 @@
 				</div>
 			</section>
 
+			<!-- Location, hours, and map -->
 			<section id="contact">
 				<div class="container">
 					<div class="section-title">
@@ -321,14 +323,7 @@
 				</div>
 			</section>
 
-			<section class="back-to-top">
-				<div class="container">
-					<div class="map-back">
-						<a class="btn btn-outline btn-dark" href="#top">Обратно в началото</a>
-					</div>
-				</div>
-			</section>
-
+			<!-- Reviews: rating buttons + curated reviews -->
 			<section id="reviews">
 				<div class="container">
 					<div class="section-title">
@@ -341,7 +336,7 @@
 							<p>Изберете оценка. При 4 или 5 звезди ще ви заведем към страницата ни с отзиви.</p>
 							<div
 								class="rating-stars"
-								data-high-url="https://www.facebook.com/sasedite/reviews"
+								data-high-url="https://www.google.com/maps/place/%D0%A1%D1%8A%D1%81%D0%B5%D0%B4%D0%B8%D1%82%D0%B5/@42.6677067,23.3020677,15z/data=!3m1!5s0x40aa85a96cb34f8d:0xeee3d1eb066dca94!4m8!3m7!1s0x40aa84df5e891d8f:0x134e6651c403f2a6!8m2!3d42.6654378!4d23.3020653!9m1!1b1!16s%2Fg%2F1thk7742?entry=ttu&review=1"
 								data-low-url="feedback.html"
 							>
 								<button class="rating-button" type="button" data-rating="1" aria-label="1 звезда">★</button>
@@ -351,22 +346,47 @@
 								<button class="rating-button" type="button" data-rating="5" aria-label="5 звезди">★</button>
 							</div>
 							<p class="rating-note">Благодарим ви, че отделихте време.</p>
-						</div>
-						<div class="reviews-embed">
-							<div class="embed-responsive" aria-label="Facebook отзиви">
-								<iframe
-									src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsasedite&tabs=reviews&width=500&height=720&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true"
-									width="100%"
-									height="720"
-									style="border:0; overflow:hidden"
-									scrolling="no"
-									frameborder="0"
-									allowfullscreen="true"
-									allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-									title="Facebook Reviews"
-								></iframe>
+							<div class="review-samples">
+								<figure class="review-sample">
+									<div class="review-stars" aria-label="5 от 5">★★★★★</div>
+									<p>
+										„Днес имах удоволствието да хапна от свинския им кебап, който се оказа най-вкусният, който
+										съм хапвала някога. Почти всеки ден се храня при тях и гозбите са им много вкусни, понякога
+										напомнят за бабините, а понякога ме изненадват с щипка иновативност и фюжън. Оставете си място
+										и за някои от десертите им. Пиците им с квас са 100 точки. 🤌“
+									</p>
+									<span>— Stanislava Hristova</span>
+								</figure>
+								<figure class="review-sample">
+									<div class="review-stars" aria-label="5 от 5">★★★★★</div>
+									<p>
+										„Прекрасно, уютно местенце, където може да се насладите истински на качеството и любовта, с
+										която творят с ръцете си за тялото и духа. При тях ми харесва това, че има за всеки по нещо
+										и веган пица и месни специалитети, и малиново вино, и здравословни бонбони. С техните вкусове
+										могат да те отведат в различно време на различно място. Това се случи с мен.“
+									</p>
+									<span>— Evelina Slavova</span>
+								</figure>
+								<figure class="review-sample">
+									<div class="review-stars" aria-label="5 от 5">★★★★★</div>
+									<p>
+										„Много приятно място с вкусна храна и страхотно обслужване. Менюто не е голямо, но е доста
+										нетрадиционно и много вкусно. Пицата е невероятна! Накрая дори ни дадоха по един шот
+										диджестив, комлимент от заведението!“
+									</p>
+									<span>— Magdalena Boneva</span>
+								</figure>
 							</div>
 						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Back to top link -->
+			<section class="back-to-top">
+				<div class="container">
+					<div class="map-back">
+						<a class="btn btn-outline btn-dark" href="#top">Обратно в началото</a>
 					</div>
 				</div>
 			</section>

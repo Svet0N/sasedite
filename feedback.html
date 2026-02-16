@@ -15,6 +15,7 @@
 	</head>
 	<body>
 		<main id="top">
+			<!-- Feedback form for low ratings -->
 			<section>
 				<div class="container">
 					<div class="section-title">
@@ -22,7 +23,8 @@
 						<p>Напишете ни с няколко думи какво не ви хареса. Това ни помага да станем по-добри.</p>
 					</div>
 					<form id="feedback-form" class="story-card" novalidate>
-						<!-- TODO: EmailJS IDs will be added here when provided. -->
+						<p id="rating-display" class="rating-note"></p>
+						<input id="rating" name="rating" type="hidden" />
 						<label for="feedback">Вашето мнение</label>
 						<textarea
 							id="feedback"
@@ -32,14 +34,17 @@
 							required
 						></textarea>
 						<div class="reservation-actions" style="margin-top: 12px;">
-							<button class="btn btn-primary" type="submit">Изпрати</button>
+							<button id="feedback-submit" class="btn btn-primary" type="submit">Изпрати</button>
 							<a class="btn btn-outline btn-dark" href="index.html">Назад към сайта</a>
 						</div>
+						<p id="feedback-status" class="form-status" role="status" aria-live="polite" hidden>
+							Изпращаме мнението ви...
+						</p>
 						<p id="feedback-success" class="form-success" role="status" aria-live="polite" hidden>
 							Благодарим за обратната връзка!
 						</p>
 						<p id="feedback-error" class="form-error" role="status" aria-live="polite" hidden>
-							Формата не е свързана с имейл. Изпратете ни данните от EmailJS, за да я активираме.
+							Възникна проблем при изпращането. Моля, опитайте отново.
 						</p>
 					</form>
 				</div>

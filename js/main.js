@@ -1,3 +1,4 @@
+// Core DOM references used across the page
 const navbar = document.getElementById("navbar");
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = lightbox ? lightbox.querySelector("img") : null;
@@ -11,6 +12,7 @@ const feedbackError = document.getElementById("feedback-error");
 const reservationStatus = document.getElementById("reservation-status");
 const reservationError = document.getElementById("reservation-error");
 
+// Sticky header style on scroll
 const onScroll = () => {
 	if (!navbar) return;
 	navbar.classList.toggle("scrolled", window.scrollY > 40);
@@ -19,6 +21,7 @@ const onScroll = () => {
 window.addEventListener("scroll", onScroll, { passive: true });
 onScroll();
 
+// Mobile navigation toggle
 if (navToggle && mobileMenu) {
 	navToggle.addEventListener("click", () => {
 		const isOpen = mobileMenu.classList.toggle("open");
@@ -33,6 +36,7 @@ if (navToggle && mobileMenu) {
 	});
 }
 
+// Gallery lightbox behavior
 if (lightbox && lightboxImage && lightboxClose) {
 	document.querySelectorAll(".gallery-item").forEach((item) => {
 		item.addEventListener("click", () => {
@@ -66,7 +70,11 @@ if (ratingContainer) {
 	ratingContainer.querySelectorAll(".rating-button").forEach((button) => {
 		button.addEventListener("click", () => {
 			const rating = Number(button.dataset.rating || 0);
-			const destination = rating >= 4 ? highUrl : lowUrl;
+			let destination = rating >= 4 ? highUrl : lowUrl;
+			if (rating > 0 && rating < 4 && destination) {
+				const divider = destination.includes("?") ? "&" : "?";
+				destination = `${destination}${divider}rating=${rating}`;
+			}
 			if (destination) {
 				window.location.href = destination;
 			}
@@ -74,7 +82,7 @@ if (ratingContainer) {
 	});
 }
 
-// Reservation validation handled client-side for the static site.
+// Reservation validation + Apps Script submission
 if (reservationForm) {
 	const dateInput = reservationForm.querySelector("#date");
 	const timeInput = reservationForm.querySelector("#time");
@@ -162,28 +170,47 @@ if (reservationForm) {
 	});
 }
 
-// Lightweight feedback confirmation without a backend.
+// Feedback form (EmailJS)
 const feedbackForm = document.getElementById("feedback-form");
 const feedbackSuccess = document.getElementById("feedback-success");
 
 // EmailJS configuration (replace with real values when available).
 const emailjsConfig = {
-	serviceId: "YOUR_SERVICE_ID",
-	templateId: "YOUR_TEMPLATE_ID",
-	publicKey: "YOUR_PUBLIC_KEY",
+	serviceId: "service_sasedite",
+	templateId: "template_mk0f0th",
+	publicKey: "GCAR4b0hBj4-_52nV",
 };
 
 if (feedbackForm) {
+	const ratingInput = feedbackForm.querySelector("#rating");
+	const ratingDisplay = document.getElementById("rating-display");
+	const feedbackStatus = document.getElementById("feedback-status");
+	const feedbackSubmit = document.getElementById("feedback-submit");
+	const ratingParam = new URLSearchParams(window.location.search).get("rating");
+	if (ratingParam && ratingInput) {
+		ratingInput.value = ratingParam;
+	}
+	if (ratingParam && ratingDisplay) {
+		ratingDisplay.textContent = `Оценка: ${ratingParam} / 5`;
+	}
+
 	feedbackForm.addEventListener("submit", (event) => {
 		event.preventDefault();
+		if (!feedbackForm.reportValidity()) {
+			return;
+		}
 		const feedbackText = feedbackForm.querySelector("#feedback");
 		const message = feedbackText ? feedbackText.value.trim() : "";
+		const rating = ratingInput ? ratingInput.value.trim() : "";
+		const stars = rating ? "★".repeat(Math.max(0, Math.min(5, Number(rating)))) : "";
+		const submittedAt = new Date().toLocaleString("bg-BG");
 		const hasConfig =
 			emailjsConfig.serviceId !== "YOUR_SERVICE_ID" &&
 			emailjsConfig.templateId !== "YOUR_TEMPLATE_ID" &&
 			emailjsConfig.publicKey !== "YOUR_PUBLIC_KEY";
 
 		if (!hasConfig || typeof emailjs === "undefined") {
+			if (feedbackStatus) feedbackStatus.hidden = true;
 			if (feedbackError) {
 				feedbackError.hidden = false;
 			}
@@ -191,21 +218,45 @@ if (feedbackForm) {
 		}
 
 		feedbackError && (feedbackError.hidden = true);
+		feedbackSuccess && (feedbackSuccess.hidden = true);
+		feedbackStatus && (feedbackStatus.hidden = false);
+		if (feedbackSubmit) {
+			feedbackSubmit.disabled = true;
+			feedbackSubmit.setAttribute("aria-disabled", "true");
+		}
 		emailjs.init({ publicKey: emailjsConfig.publicKey });
 		emailjs
 			.send(emailjsConfig.serviceId, emailjsConfig.templateId, {
+				rating,
 				message,
-				page: window.location.href,
+				submitted_at: submittedAt,
+				stars,
 			})
 			.then(() => {
 				feedbackForm.reset();
+				if (ratingInput) {
+					ratingInput.value = ratingParam || "";
+				}
+				if (ratingDisplay) {
+					ratingDisplay.textContent = ratingParam ? `Оценка: ${ratingParam} / 5` : "";
+				}
+				feedbackStatus && (feedbackStatus.hidden = true);
 				if (feedbackSuccess) {
 					feedbackSuccess.hidden = false;
 				}
+				if (feedbackSubmit) {
+					feedbackSubmit.disabled = false;
+					feedbackSubmit.setAttribute("aria-disabled", "false");
+				}
 			})
 			.catch(() => {
+				feedbackStatus && (feedbackStatus.hidden = true);
 				if (feedbackError) {
 					feedbackError.hidden = false;
+				}
+				if (feedbackSubmit) {
+					feedbackSubmit.disabled = false;
+					feedbackSubmit.setAttribute("aria-disabled", "false");
 				}
 			});
 	});
